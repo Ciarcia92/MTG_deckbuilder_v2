@@ -1,0 +1,117 @@
+<!-- //TODO SISTEMARE BOTTONI VARI -->
+<section>
+  <div class="deck-container">
+    <div *ngFor="let deck of decks" class="deck">
+      <div class="deckname">{{ deck.name | titlecase }}</div>
+
+      <!-- button to cancel deck-->
+      <div>
+        <button
+          type="button"
+          (click)="onDeleteDeck(deck.id, $event)"
+          class="btn btn-link"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-trash-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
+            />
+          </svg>
+        </button>
+        <button
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#deckModal"
+          (click)="getCards(deck.id)"
+          class="btn btn-transparent"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-arrows-fullscreen"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="deckModal"
+    tabindex="-1"
+    aria-labelledby="deckModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">
+            Deck name: {{ selectedDeck?.name }}
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="card-container">
+            <!-- utilizzo della nuova proprietà -->
+            <div *ngIf="!!deckLength; else noCards">
+              <div set *ngIf="!!artifactsLength">
+                <h5>Artifacts: {{ artifacts.length }}</h5>
+                <div class="cards">
+                  <div *ngFor="let artifact of artifacts">
+                    <img src="{{ artifact.imageUris }}" alt="card-image" />
+                  </div>
+                </div>
+              </div>
+              <div set *ngIf="!!creaturesLength">
+                <h5>Creatures: {{ creatures.length }}</h5>
+                <div class="cards">
+                  <div *ngFor="let creature of creatures">
+                    <img src="{{ creature.imageUris }}" alt="card-image" />
+                  </div>
+                </div>
+              </div>
+              <div set *ngIf="enchantmentsLength">
+                <h5>Enchantments: {{ enchantments.length }}</h5>
+                <div class="cards">
+                  <div *ngFor="let enchantment of enchantments">
+                    <img src="{{ enchantment.imageUris }}" alt="card-image" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ng-template #noCards>
+              <div id="noCards">
+                It seems there are no cards in this deck... <br />
+                Visit the
+
+                  Deckbuilder section
+
+                to add some!
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

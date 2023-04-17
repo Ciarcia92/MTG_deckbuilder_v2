@@ -1,0 +1,226 @@
+#list-card {
+  box-shadow: 0px 10px 5px 0px rgba(199, 186, 186, 0.75);
+  -webkit-box-shadow: 0px 10px 5px 0px rgba(199, 186, 186, 0.75);
+  -moz-box-shadow: 0px 10px 5px 0px rgba(199, 186, 186, 0.75);
+
+  background-color: rgb(136, 133, 133);
+  border-radius: 10px;
+}
+
+li label {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 5px;
+}
+
+.all-filters {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.filter-dash {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
+  padding: 20px;
+}
+
+.filter-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.colors-filter {
+  padding-inline: 10px;
+}
+
+.filter-btns {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-btn {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #eacd65;
+  #searchBtn {
+    color: black;
+  }
+}
+
+.scrollable {
+  height: 250px;
+  overflow-y: scroll;
+}
+
+#deckbuilder {
+  margin: 8rem 0 5rem 0;
+}
+
+.modal-content {
+  width: 600px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.image-container img {
+  object-fit: cover;
+  margin: 10px;
+}
+
+.mana-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+.pagination-container {
+  text-align: center;
+}
+
+.addMana {
+  background-color: transparent;
+  border: none;
+}
+
+#rendering-card {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+#create-deck-btn {
+  margin-bottom: 10px;
+
+  border: none;
+  border-radius: 16px;
+
+  background: rgb(39, 41, 39);
+  background: linear-gradient(90deg, #272927dd 0%, #9d1924e2 100%);
+  opacity: 0.7;
+  transition: opacity 0.3s;
+
+  &:hover {
+    background: rgb(39, 41, 39);
+    background: linear-gradient(
+      214deg,
+      rgba(39, 41, 39, 1) 0%,
+      rgba(157, 25, 36, 1) 100%
+    );
+    opacity: 1;
+  }
+}
+
+#filterBtn {
+  background-color: #143eb9;
+  border: none;
+}
+
+#resetFiltersBtn {
+  background-color: #9d1924;
+  border: none;
+}
+
+#left-deckbuilder {
+  margin-top: 20px;
+}
+
+#exampleModal {
+  .modal-content {
+    color: white;
+    background-image: url("../../../assets/img/dialog-background.png");
+    background-size: cover;
+
+    .card-infos {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .quantity {
+      padding: 10px;
+      background: rgb(59, 164, 74);
+      background: radial-gradient(
+        circle,
+        rgba(59, 164, 74, 0.8939950980392157) 0%,
+        rgba(64, 42, 44, 0.8883928571428571) 100%
+      );
+      box-shadow: 6px 4px 5px 0px rgba(102, 93, 93, 0.75);
+      -webkit-box-shadow: 6px 4px 5px 0px rgba(102, 93, 93, 0.75);
+      -moz-box-shadow: 6px 4px 5px 0px rgba(102, 93, 93, 0.75);
+      border-radius: 8px;
+    }
+  }
+}
+
+#deckNameModal {
+  .modal-content {
+    background-image: url("../../../assets/img/dialog-background.png");
+
+    h5 {
+      background: -webkit-linear-gradient(#000000dc, #81de8fe4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.deck-creation {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  #deckbuilder {
+    margin-top: 12rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .cards-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+@media only screen and (max-width: 984px) {
+  #searchbar {
+    padding-block: 10px;
+  }
+}
+@media only screen and (max-width: 1120px) {
+  #rendering-card {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

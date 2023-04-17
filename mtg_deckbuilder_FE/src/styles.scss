@@ -1,0 +1,85 @@
+* {
+  font-family: "MedievalSharp", cursive;
+}
+
+button svg {
+  color: rgb(208, 201, 201);
+}
+
+.deck-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.deck {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+
+  min-width: 150px;
+  min-height: 200px;
+
+  border: 1px solid black;
+  border-radius: 16px;
+  padding: 10px;
+  background-image: url("./assets/img/deck-bg.png");
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  // -webkit-transition: background-color 20s ease-out;
+  // -moz-transition: background-color 20s ease-out;
+  // -o-transition: background-color 20s ease-out;
+  // -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  // transition: background-color 20s ease-out;
+
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 14px 19px 15px -3px rgba(0, 0, 0, 0.8);
+  }
+
+  .deckname {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    color: black;
+    background-color: #e5b26bc9;
+
+    border-radius: 10px;
+  }
+}
+
+.cards-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.expansion-card {
+  width: fit-content;
+  padding: inherit;
+
+  border-radius: 10px;
+
+  &:hover {
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+  }
+}

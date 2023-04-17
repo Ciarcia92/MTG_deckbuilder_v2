@@ -1,0 +1,17 @@
+#login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../../assets/img/backgroundlogin.jpeg");
+  background-position: center;
+}
+
+#form {
+  width: 70%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

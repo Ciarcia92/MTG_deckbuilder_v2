@@ -1,0 +1,70 @@
+.app-deck {
+  border: 2px dashed rgb(137, 135, 135);
+  box-shadow: 10px 10px 5px 0px rgba(199, 186, 186, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(199, 186, 186, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(199, 186, 186, 0.75);
+  height: 100%;
+  padding: 20px 15px;
+  border-radius: 10px;
+
+  margin-top: 20px;
+}
+
+.selected-deck-cards-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 3px;
+  padding: 20px;
+}
+
+button.delete {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.expansion-card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.controls {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+
+  color: white;
+
+  border-bottom: 2px dashed rgb(137, 135, 135);
+
+  .back {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    height: 38px;
+  }
+
+  h2 {
+    color: black;
+    font-weight: 700;
+  }
+}
+
+.img-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 250px;
+}

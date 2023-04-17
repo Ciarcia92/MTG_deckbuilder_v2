@@ -1,0 +1,23 @@
+#registration-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../../assets/img/backgroundregistration.jpeg");
+  background-position: center;
+}
+
+#form {
+  width: 70%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  #form {
+    margin-top: 5rem;
+  }
+}
